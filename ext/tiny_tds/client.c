@@ -64,7 +64,7 @@ int tinytds_err_handler(DBPROCESS *dbproc, int severity, int dberr, int oserr, c
     case SYBESEOF: /* Usually accompanied by another more useful error */
     case SYBESMSG: /* Generic "check messages from server" error */
     case SYBEICONVI: /* Just return ?s to the client, as explained in readme */
-      return return_value;
+      return INT_CANCEL;
 
     case SYBEICONVO:
       dbfreebuf(dbproc);
